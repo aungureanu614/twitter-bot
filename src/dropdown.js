@@ -19,12 +19,13 @@ var DropdownMenu = React.createClass({
 		this.setState({ open: !this.state.open });
 	},
 	render: function() {
+		var listStyle = this.state.open ? styles.open : styles.closed;
 		return (
 			<div className='dropdown-wrapper' onClick={ this.toggleMenu }>
 				<button className='btn btn-info'>
 					Dropdown Menu
 				</button>
-				<ul>
+				<ul style={listStyle}>
 					<li>Option #1</li>
 					<li>Option #2</li>
 					<li>Option #3</li>
@@ -34,4 +35,4 @@ var DropdownMenu = React.createClass({
 	}
 });
 
-ReactDOM.render(<DropdownMenu />, document.getElementById('dropdown-menu'))
+ReactDOM.render(<DropdownMenu/>, document.getElementById('dropdown-menu'))
